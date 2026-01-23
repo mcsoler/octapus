@@ -1,0 +1,94 @@
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    container_name: akicti_db
+    hostname: db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-akicti_db}
+      POSTGRES_USER: ${POSTGRES_USER:-akicti_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-akicti_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "3310:5432"
+    networks:
+      akicti_network:
+        aliases:
+          - db
+          - postgres
+          - database
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-akicti_user} -d ${POSTGRES_DB:-akicti_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Django Backend
+  backend:
+    image: akicti-backend:latest
+    container_name: akicti_backend
+    hostname: backend
+    restart: unless-stopped
+    environment:
+      - DEBUG=${DEBUG:-False}
+      - SECRET_KEY=${SECRET_KEY:-django-insecure-change-this-in-production}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost,127.0.0.1,backend}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173,http://localhost}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-akicti_user}:${POSTGRES_PASSWORD:-akicti_password}@db:5432/${POSTGRES_DB:-akicti_db}
+      - POSTGRES_DB=${POSTGRES_DB:-akicti_db}
+      - POSTGRES_USER=${POSTGRES_USER:-akicti_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-akicti_password}
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - USE_REDIS=${USE_REDIS:-False}
+    extra_hosts:
+      - "db:172.17.0.2"
+    volumes:
+      - backend_static:/app/staticfiles
+      - backend_logs:/app/logs
+    ports:
+      - "8000:8000"
+    networks:
+      akicti_network:
+        aliases:
+          - backend
+          - api
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
+
+  # React Frontend
+  frontend:
+    image: akicti-frontend:latest
+    container_name: akicti_frontend
+    hostname: frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      akicti_network:
+        aliases:
+          - frontend
+          - web
+    depends_on:
+      - backend
+    links:
+      - backend
+
+volumes:
+  postgres_data:
+    driver: local
+  backend_static:
+    driver: local
+  backend_logs:
+    driver: local
+
+networks:
+  akicti_network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"

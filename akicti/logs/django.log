@@ -1,0 +1,1487 @@
+ERROR 2026-01-21 04:18:25,836 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/1/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:28,474 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/2/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:30,946 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/1/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:33,417 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/1/evidences/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:35,951 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:38,343 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:40,553 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:42,783 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:45,102 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:47,336 log 4262 140414994686080 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:48,873 log 4262 140414994686080 Internal Server Error: /api/v1/evidences/1/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:50,475 log 4262 140414994686080 Internal Server Error: /api/v1/evidences/1/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:51,967 log 4262 140414994686080 Internal Server Error: /api/v1/evidences/1/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2026-01-21 04:18:53,533 log 4262 140414994686080 Internal Server Error: /api/v1/evidences/1/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 422, in initial
+    self.check_throttles(request)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django_redis/client/default.py", line 298, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/commands/core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "/home/soler/octapus/lib/python3.12/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+WARNING 2026-01-21 04:20:08,913 log 4276 140612673155200 Not Found: /api/v1/alerts/2/
+ERROR 2026-01-21 04:20:25,239 log 4276 140612673155200 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/generics.py", line 154, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/filters.py", line 167, in filter_queryset
+    queryset = queryset.filter(reduce(operator.and_, conditions))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/query.py", line 1542, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/query.py", line 1560, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/query.py", line 1570, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1671, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1703, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1528, in build_filter
+    return self._add_q(
+           ^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1703, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1528, in build_filter
+    return self._add_q(
+           ^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1703, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1551, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1358, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1832, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'summary' into field. Choices are: created_at, evidences, id, owner, owner_id, severity, status, title
+WARNING 2026-01-21 04:21:08,346 log 4288 140677358010496 Not Found: /api/v1/alerts/2/
+WARNING 2026-01-21 04:21:56,025 log 4292 139942960525440 Bad Request: /api/v1/evidences/1/
+INFO 2026-01-21 04:21:57,532 views 4292 139942960525440 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:21:59,110 views 4292 139942960525440 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:22:00,727 views 4292 139942960525440 Evidence 1 marked as reviewed by user 1
+WARNING 2026-01-21 04:23:45,622 log 4323 139803785736320 Bad Request: /api/v1/evidences/1/
+INFO 2026-01-21 04:23:47,104 views 4323 139803785736320 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:23:48,626 views 4323 139803785736320 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:23:50,137 views 4323 139803785736320 Evidence 1 marked as reviewed by user 1
+WARNING 2026-01-21 04:24:39,026 log 4334 140692126396544 Unauthorized: /api/v1/alerts/
+ERROR 2026-01-21 04:24:39,034 log 4334 140692126396544 Internal Server Error: /api/v1/alerts/
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2128, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/contrib/auth/models.py", line 549, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/akicti/alerts/views.py", line 46, in get_queryset
+    return queryset.filter(owner=user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/query.py", line 1542, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/query.py", line 1560, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/query.py", line 1570, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1671, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1703, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1613, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1440, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/lookups.py", line 35, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/fields/related_lookups.py", line 113, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/soler/octapus/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2130, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7ff56ae29d00>.
+WARNING 2026-01-21 04:24:40,588 log 4334 140692126396544 Unauthorized: /api/v1/auth/login/
+INFO 2026-01-21 04:24:42,142 views 4334 140692126396544 User logged in: testuser
+INFO 2026-01-21 04:24:42,904 views 4334 140692126396544 User logged out: testuser
+WARNING 2026-01-21 04:24:43,694 log 4334 140692126396544 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:24:44,439 log 4334 140692126396544 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:24:44,443 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:24:44,445 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:24:44,448 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:24:45,236 log 4334 140692126396544 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:24:46,007 log 4334 140692126396544 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:24:46,008 log 4334 140692126396544 Too Many Requests: /api/v1/auth/login/
+WARNING 2026-01-21 04:24:46,010 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:24:46,791 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:24:46,793 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:24:46,796 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:24:46,799 log 4334 140692126396544 Too Many Requests: /api/v1/auth/register/
+INFO 2026-01-21 04:24:47,585 views 4334 140692126396544 Token refreshed successfully
+WARNING 2026-01-21 04:24:48,413 log 4334 140692126396544 Unauthorized: /api/v1/auth/token/verify/
+INFO 2026-01-21 04:26:33,515 views 4362 139907943817344 New user registered: testuser
+WARNING 2026-01-21 04:26:55,920 log 4369 140011354747008 Unauthorized: /api/v1/alerts/
+WARNING 2026-01-21 04:26:57,500 log 4369 140011354747008 Unauthorized: /api/v1/auth/login/
+INFO 2026-01-21 04:26:59,083 views 4369 140011354747008 User logged in: testuser
+INFO 2026-01-21 04:26:59,898 views 4369 140011354747008 User logged out: testuser
+WARNING 2026-01-21 04:27:00,673 log 4369 140011354747008 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:27:01,464 log 4369 140011354747008 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:27:01,516 log 4369 140011354747008 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:27:01,519 log 4369 140011354747008 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:27:01,523 log 4369 140011354747008 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:27:02,299 log 4369 140011354747008 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:27:03,040 log 4369 140011354747008 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:27:03,041 log 4369 140011354747008 Too Many Requests: /api/v1/auth/login/
+WARNING 2026-01-21 04:27:03,043 log 4369 140011354747008 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:27:03,881 log 4369 140011354747008 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:27:03,884 log 4369 140011354747008 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:27:03,890 log 4369 140011354747008 Too Many Requests: /api/v1/auth/register/
+WARNING 2026-01-21 04:27:03,893 log 4369 140011354747008 Too Many Requests: /api/v1/auth/register/
+INFO 2026-01-21 04:27:04,662 views 4369 140011354747008 Token refreshed successfully
+WARNING 2026-01-21 04:27:05,433 log 4369 140011354747008 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2026-01-21 04:30:18,781 log 4403 139711918846080 Forbidden: /api/v1/alerts/
+WARNING 2026-01-21 04:30:41,971 log 4411 140464361824384 Unauthorized: /api/v1/alerts/
+WARNING 2026-01-21 04:30:41,975 log 4411 140464361824384 Forbidden: /api/v1/alerts/
+WARNING 2026-01-21 04:30:43,532 log 4411 140464361824384 Unauthorized: /api/v1/auth/login/
+INFO 2026-01-21 04:30:45,108 views 4411 140464361824384 User logged in: testuser
+INFO 2026-01-21 04:30:45,873 views 4411 140464361824384 User logged out: testuser
+WARNING 2026-01-21 04:30:46,616 log 4411 140464361824384 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:30:47,373 log 4411 140464361824384 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:30:47,427 log 4411 140464361824384 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:30:47,431 log 4411 140464361824384 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:30:48,248 views 4411 140464361824384 New user registered: testuser
+WARNING 2026-01-21 04:30:49,017 log 4411 140464361824384 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:30:49,734 log 4411 140464361824384 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:30:50,488 log 4411 140464361824384 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:30:51,272 log 4411 140464361824384 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:30:52,029 log 4411 140464361824384 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-21 04:30:52,819 log 4411 140464361824384 Unauthorized: /api/v1/auth/login/
+INFO 2026-01-21 04:30:53,566 views 4411 140464361824384 New user registered: testuser0
+INFO 2026-01-21 04:30:54,302 views 4411 140464361824384 New user registered: testuser1
+INFO 2026-01-21 04:30:55,122 views 4411 140464361824384 New user registered: testuser2
+INFO 2026-01-21 04:30:55,929 views 4411 140464361824384 New user registered: testuser3
+WARNING 2026-01-21 04:30:56,681 log 4411 140464361824384 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:30:56,684 log 4411 140464361824384 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:30:57,438 views 4411 140464361824384 New user registered: testuser
+WARNING 2026-01-21 04:30:57,446 log 4411 140464361824384 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:30:58,192 views 4411 140464361824384 Token refreshed successfully
+WARNING 2026-01-21 04:30:58,965 log 4411 140464361824384 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2026-01-21 04:33:40,328 log 4447 140115044167808 Unauthorized: /api/v1/alerts/
+WARNING 2026-01-21 04:33:40,334 log 4447 140115044167808 Forbidden: /api/v1/alerts/
+WARNING 2026-01-21 04:33:41,846 log 4447 140115044167808 Unauthorized: /api/v1/auth/login/
+INFO 2026-01-21 04:33:43,354 views 4447 140115044167808 User logged in: testuser
+INFO 2026-01-21 04:33:44,108 views 4447 140115044167808 User logged out: testuser
+WARNING 2026-01-21 04:33:44,889 log 4447 140115044167808 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:33:45,704 log 4447 140115044167808 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:33:45,746 log 4447 140115044167808 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:33:45,749 log 4447 140115044167808 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:33:46,485 views 4447 140115044167808 New user registered: testuser
+WARNING 2026-01-21 04:33:47,246 log 4447 140115044167808 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:33:47,250 log 4447 140115044167808 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:33:48,002 views 4447 140115044167808 New user registered: testuser
+WARNING 2026-01-21 04:33:48,009 log 4447 140115044167808 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:33:48,815 views 4447 140115044167808 Token refreshed successfully
+WARNING 2026-01-21 04:33:49,594 log 4447 140115044167808 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2026-01-21 04:34:09,253 log 4458 140356158722176 Unauthorized: /api/v1/alerts/
+WARNING 2026-01-21 04:34:09,255 log 4458 140356158722176 Forbidden: /api/v1/alerts/
+WARNING 2026-01-21 04:34:10,751 log 4458 140356158722176 Unauthorized: /api/v1/auth/login/
+INFO 2026-01-21 04:34:12,202 views 4458 140356158722176 User logged in: testuser
+INFO 2026-01-21 04:34:13,027 views 4458 140356158722176 User logged out: testuser
+WARNING 2026-01-21 04:34:13,852 log 4458 140356158722176 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:34:14,577 log 4458 140356158722176 Bad Request: /api/v1/auth/logout/
+WARNING 2026-01-21 04:34:14,631 log 4458 140356158722176 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:34:14,635 log 4458 140356158722176 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:34:15,404 views 4458 140356158722176 New user registered: testuser
+WARNING 2026-01-21 04:34:16,151 log 4458 140356158722176 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:34:16,154 log 4458 140356158722176 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:34:16,903 views 4458 140356158722176 New user registered: testuser
+WARNING 2026-01-21 04:34:16,906 log 4458 140356158722176 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:34:17,726 views 4458 140356158722176 Token refreshed successfully
+WARNING 2026-01-21 04:34:18,459 log 4458 140356158722176 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2026-01-21 04:35:14,149 log 4474 139632639578240 Not Found: /api/v1/alerts/2/
+WARNING 2026-01-21 04:35:34,106 log 4474 139632639578240 Bad Request: /api/v1/evidences/1/
+INFO 2026-01-21 04:35:35,614 views 4474 139632639578240 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:35:37,169 views 4474 139632639578240 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:35:38,674 views 4474 139632639578240 Evidence 1 marked as reviewed by user 1
+WARNING 2026-01-21 04:35:50,608 log 4482 140432874647680 Not Found: /api/v1/alerts/2/
+WARNING 2026-01-21 04:36:10,327 log 4482 140432874647680 Bad Request: /api/v1/evidences/1/
+INFO 2026-01-21 04:36:11,805 views 4482 140432874647680 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:36:13,327 views 4482 140432874647680 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:36:14,836 views 4482 140432874647680 Evidence 1 marked as reviewed by user 1
+WARNING 2026-01-21 04:36:37,089 log 4492 139803485167744 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:36:37,846 views 4492 139803485167744 New user registered: testuser
+WARNING 2026-01-21 04:36:37,853 log 4492 139803485167744 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:36:38,570 views 4492 139803485167744 New user registered: testuser
+WARNING 2026-01-21 04:36:38,576 log 4492 139803485167744 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:36:44,564 log 4495 140641898266752 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:36:45,315 views 4495 140641898266752 New user registered: testuser
+WARNING 2026-01-21 04:36:45,319 log 4495 140641898266752 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:36:46,035 views 4495 140641898266752 New user registered: testuser
+WARNING 2026-01-21 04:36:46,041 log 4495 140641898266752 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:38:36,314 log 4510 140202384355456 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:38:36,319 log 4510 140202384355456 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:38:37,076 views 4510 140202384355456 New user registered: testuser
+WARNING 2026-01-21 04:38:37,081 log 4510 140202384355456 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:38:49,228 log 4514 139860040269952 Not Found: /api/v1/alerts/2/
+WARNING 2026-01-21 04:39:09,191 log 4514 139860040269952 Bad Request: /api/v1/evidences/1/
+INFO 2026-01-21 04:39:10,706 views 4514 139860040269952 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:39:12,229 views 4514 139860040269952 Evidence 1 marked as reviewed by user 1
+INFO 2026-01-21 04:39:13,776 views 4514 139860040269952 Evidence 1 marked as reviewed by user 1
+WARNING 2026-01-21 04:39:14,574 log 4514 139860040269952 Bad Request: /api/v1/auth/register/
+WARNING 2026-01-21 04:39:14,579 log 4514 139860040269952 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:39:15,323 views 4514 139860040269952 New user registered: testuser
+WARNING 2026-01-21 04:39:15,329 log 4514 139860040269952 Bad Request: /api/v1/auth/register/
+INFO 2026-01-21 04:50:20,402 autoreload 4590 139815403319424 Watching for file changes with StatReloader
+WARNING 2026-01-21 04:50:41,490 log 4590 139815248983744 Not Found: /
+WARNING 2026-01-21 04:50:41,490 basehttp 4590 139815248983744 "GET / HTTP/1.1" 404 2278
+WARNING 2026-01-21 04:50:41,541 log 4590 139815248983744 Not Found: /favicon.ico
+WARNING 2026-01-21 04:50:41,542 basehttp 4590 139815248983744 "GET /favicon.ico HTTP/1.1" 404 2329
+WARNING 2026-01-21 04:50:54,405 log 4590 139815240591040 Not Found: /api/v1/auth/
+WARNING 2026-01-21 04:50:54,406 basehttp 4590 139815240591040 "GET /api/v1/auth/ HTTP/1.1" 404 6142
+INFO 2026-01-21 04:59:11,313 autoreload 4692 140470266380416 Watching for file changes with StatReloader
+WARNING 2026-01-21 04:59:40,150 log 4692 140470109861568 Not Found: /api/v1/auth/
+WARNING 2026-01-21 04:59:40,150 basehttp 4692 140470109861568 "GET /api/v1/auth/ HTTP/1.1" 404 6142
+WARNING 2026-01-21 04:59:58,197 log 4692 140470101468864 Not Found: /api/v1/auth/
+WARNING 2026-01-21 04:59:58,197 basehttp 4692 140470101468864 "GET /api/v1/auth/ HTTP/1.1" 404 6142
+INFO 2026-01-23 01:59:43,789 autoreload 3471 140297737949312 Watching for file changes with StatReloader
+WARNING 2026-01-23 01:59:48,399 log 3471 140297581360832 Not Found: /
+WARNING 2026-01-23 01:59:48,399 basehttp 3471 140297581360832 "GET / HTTP/1.1" 404 2278
+WARNING 2026-01-23 01:59:48,495 log 3471 140297581360832 Not Found: /favicon.ico
+WARNING 2026-01-23 01:59:48,501 basehttp 3471 140297581360832 "GET /favicon.ico HTTP/1.1" 404 2329
+WARNING 2026-01-23 02:29:13,329 log 3471 140297581360832 Not Found: /
+WARNING 2026-01-23 02:29:13,337 basehttp 3471 140297581360832 "GET / HTTP/1.1" 404 2278
+WARNING 2026-01-23 02:29:13,473 log 3471 140297581360832 Not Found: /favicon.ico
+WARNING 2026-01-23 02:29:13,474 basehttp 3471 140297581360832 "GET /favicon.ico HTTP/1.1" 404 2329
+INFO 2026-01-23 02:29:35,497 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:29:39,362 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:29:40,445 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:29:58,749 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:30:13,011 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:30:15,356 basehttp 3471 140297564575424 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:30:16,418 basehttp 3471 140297564575424 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:31:58,152 basehttp 3471 140297564575424 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:32:18,829 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:32:20,308 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:32:21,254 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:32:22,062 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 02:32:22,548 basehttp 3471 140297581360832 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+WARNING 2026-01-23 02:34:19,340 log 3471 140297564575424 Forbidden: /api/v1/alerts/
+WARNING 2026-01-23 02:34:19,340 basehttp 3471 140297564575424 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 403 5559
+INFO 2026-01-23 02:34:19,413 basehttp 3471 140297581360832 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2026-01-23 02:34:19,414 basehttp 3471 140297572968128 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2026-01-23 02:34:19,421 basehttp 3471 140297564575424 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2026-01-23 02:34:19,426 basehttp 3471 140297581360832 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2026-01-23 02:34:19,439 basehttp 3471 140297572968128 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2026-01-23 02:34:19,441 basehttp 3471 140297581360832 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2026-01-23 02:34:19,457 basehttp 3471 140297572968128 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2026-01-23 02:34:19,473 basehttp 3471 140297581360832 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2026-01-23 02:34:19,477 basehttp 3471 140297572968128 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2026-01-23 02:34:19,478 basehttp 3471 140297564575424 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2026-01-23 02:34:19,491 basehttp 3471 140297564575424 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2026-01-23 02:34:19,516 basehttp 3471 140297564575424 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+WARNING 2026-01-23 02:35:02,308 log 3471 140297572968128 Forbidden: /api/v1/alerts/
+WARNING 2026-01-23 02:35:02,309 basehttp 3471 140297572968128 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 403 5559
+WARNING 2026-01-23 03:13:33,810 log 3471 140297547790016 Forbidden: /api/v1/alerts/
+WARNING 2026-01-23 03:13:33,818 basehttp 3471 140297547790016 "GET /api/v1/alerts/ HTTP/1.1" 403 58
+WARNING 2026-01-23 03:40:31,290 log 3471 140297581360832 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-23 03:40:31,296 basehttp 3471 140297581360832 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+INFO 2026-01-23 03:40:31,514 views 3471 140297547790016 New user registered: testuser
+INFO 2026-01-23 03:40:31,519 basehttp 3471 140297547790016 "POST /api/v1/auth/register/ HTTP/1.1" 201 585
+WARNING 2026-01-23 03:40:55,609 log 3471 140297547790016 Unauthorized: /api/v1/alerts/
+WARNING 2026-01-23 03:40:55,610 basehttp 3471 140297547790016 "GET /api/v1/alerts/ HTTP/1.1" 401 172
+INFO 2026-01-23 03:41:53,293 views 3471 140297547790016 User logged in: testuser
+INFO 2026-01-23 03:41:53,294 basehttp 3471 140297547790016 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 03:42:11,817 basehttp 3471 140297547790016 "GET /api/v1/alerts/ HTTP/1.1" 200 52
+INFO 2026-01-23 03:50:06,675 basehttp 3471 140297547790016 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-01-23 03:51:07,914 basehttp 3471 140297547790016 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-01-23 03:51:51,315 views 3471 140297581360832 User logged in: testuser
+INFO 2026-01-23 03:51:51,318 basehttp 3471 140297581360832 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 03:54:06,719 views 3471 140297581360832 User logged in: testuser
+INFO 2026-01-23 03:54:06,720 basehttp 3471 140297581360832 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 03:54:16,268 views 3471 140297581360832 User logged in: testuser
+INFO 2026-01-23 03:54:16,270 basehttp 3471 140297581360832 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 03:54:53,050 basehttp 3471 140297581360832 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-01-23 03:55:05,959 basehttp 3471 140297581360832 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-01-23 03:56:26,238 basehttp 3471 140297547790016 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-01-23 03:56:27,562 basehttp 3471 140297547790016 "OPTIONS /api/v1/auth/register/ HTTP/1.1" 200 0
+INFO 2026-01-23 03:56:38,141 basehttp 3471 140297581360832 "OPTIONS /api/v1/auth/register/ HTTP/1.1" 200 0
+INFO 2026-01-23 03:57:16,466 views 3471 140297547790016 User logged in: testuser
+INFO 2026-01-23 03:57:16,467 basehttp 3471 140297547790016 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 03:58:50,900 views 3471 140297547790016 User logged in: testuser
+INFO 2026-01-23 03:58:50,902 basehttp 3471 140297547790016 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:06:33,794 autoreload 7507 139849919561856 Watching for file changes with StatReloader
+INFO 2026-01-23 04:07:19,226 views 7507 139849763911360 User logged in: testuser
+INFO 2026-01-23 04:07:19,227 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:07:20,095 views 7507 139849763911360 User logged in: testuser
+INFO 2026-01-23 04:07:20,098 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:08:44,916 basehttp 7507 139849763911360 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+WARNING 2026-01-23 04:08:45,348 log 7507 139849763911360 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-23 04:08:45,348 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+INFO 2026-01-23 04:09:13,627 views 7507 139849744647872 User logged in: testuser
+INFO 2026-01-23 04:09:13,627 basehttp 7507 139849744647872 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:09:14,262 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 0
+INFO 2026-01-23 04:09:14,271 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:09:19,567 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status=open HTTP/1.1" 200 0
+INFO 2026-01-23 04:09:19,577 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open HTTP/1.1" 200 52
+INFO 2026-01-23 04:09:20,062 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 200 0
+WARNING 2026-01-23 04:09:20,070 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:09:20,070 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 400 93
+WARNING 2026-01-23 04:09:22,168 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:09:22,168 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 400 93
+WARNING 2026-01-23 04:09:23,560 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:09:23,561 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 400 93
+INFO 2026-01-23 04:09:47,912 views 7507 139849763911360 User logged in: testuser
+INFO 2026-01-23 04:09:47,912 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+WARNING 2026-01-23 04:09:48,234 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:09:48,235 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 400 93
+WARNING 2026-01-23 04:12:25,330 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:12:25,338 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 400 93
+INFO 2026-01-23 04:12:46,335 views 7507 139849763911360 User logged in: testuser
+INFO 2026-01-23 04:12:46,335 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:12:46,660 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:12:52,373 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=high&status= HTTP/1.1" 200 0
+INFO 2026-01-23 04:12:52,382 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=high&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:12:53,906 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=high,medium&status= HTTP/1.1" 200 0
+WARNING 2026-01-23 04:12:53,915 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:12:53,916 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=high,medium&status= HTTP/1.1" 400 88
+INFO 2026-01-23 04:16:25,669 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:16:31,880 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:16:33,108 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+WARNING 2026-01-23 04:16:37,547 log 7507 139849763911360 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-23 04:16:37,547 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+INFO 2026-01-23 04:16:37,555 basehttp 7507 139849763911360 "OPTIONS /api/v1/auth/token/refresh/ HTTP/1.1" 200 0
+INFO 2026-01-23 04:16:37,607 views 7507 139849763911360 Token refreshed successfully
+INFO 2026-01-23 04:16:37,608 basehttp 7507 139849763911360 "POST /api/v1/auth/token/refresh/ HTTP/1.1" 200 489
+WARNING 2026-01-23 04:16:38,056 log 7507 139849763911360 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-23 04:16:38,056 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+INFO 2026-01-23 04:17:04,450 basehttp 7507 139849763911360 "OPTIONS /api/v1/auth/register/ HTTP/1.1" 200 0
+INFO 2026-01-23 04:17:04,925 views 7507 139849763911360 New user registered: msoler
+INFO 2026-01-23 04:17:04,928 basehttp 7507 139849763911360 "POST /api/v1/auth/register/ HTTP/1.1" 201 603
+INFO 2026-01-23 04:17:08,702 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=low&status= HTTP/1.1" 200 0
+INFO 2026-01-23 04:17:08,711 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=low&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:17:10,862 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=low,medium&status= HTTP/1.1" 200 0
+WARNING 2026-01-23 04:17:10,870 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:17:10,870 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=low,medium&status= HTTP/1.1" 400 87
+WARNING 2026-01-23 04:17:12,761 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:17:12,761 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=low,medium&status= HTTP/1.1" 400 87
+WARNING 2026-01-23 04:17:13,468 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:17:13,468 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=low,medium&status= HTTP/1.1" 400 87
+WARNING 2026-01-23 04:17:14,094 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:17:14,094 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=low,medium&status= HTTP/1.1" 400 87
+INFO 2026-01-23 04:34:05,101 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:34:09,609 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:34:20,879 basehttp 7507 139849744647872 "OPTIONS /api/v1/auth/logout/ HTTP/1.1" 200 0
+WARNING 2026-01-23 04:34:20,887 log 7507 139849744647872 Unauthorized: /api/v1/auth/logout/
+WARNING 2026-01-23 04:34:20,887 basehttp 7507 139849744647872 "POST /api/v1/auth/logout/ HTTP/1.1" 401 58
+INFO 2026-01-23 04:34:25,583 views 7507 139849744647872 User logged in: msoler
+INFO 2026-01-23 04:34:25,584 basehttp 7507 139849744647872 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:34:25,927 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+WARNING 2026-01-23 04:34:27,851 log 7507 139849744647872 Unauthorized: /api/v1/auth/logout/
+WARNING 2026-01-23 04:34:27,851 basehttp 7507 139849744647872 "POST /api/v1/auth/logout/ HTTP/1.1" 401 58
+WARNING 2026-01-23 04:34:49,313 log 7507 139849744647872 Unauthorized: /api/v1/auth/login/
+WARNING 2026-01-23 04:34:49,314 basehttp 7507 139849744647872 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+INFO 2026-01-23 04:35:29,928 views 7507 139849763911360 User logged in: testuser
+INFO 2026-01-23 04:35:29,928 basehttp 7507 139849763911360 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:35:30,267 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:35:36,210 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:35:46,057 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=critical&status= HTTP/1.1" 200 0
+INFO 2026-01-23 04:35:46,068 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:35:47,317 basehttp 7507 139849763911360 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 200 0
+WARNING 2026-01-23 04:35:47,328 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:35:47,328 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+INFO 2026-01-23 04:35:53,638 views 7507 139849744647872 User logged in: testuser
+INFO 2026-01-23 04:35:53,639 basehttp 7507 139849744647872 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+WARNING 2026-01-23 04:35:53,954 log 7507 139849744647872 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:35:53,955 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+INFO 2026-01-23 04:35:57,103 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:35:59,564 basehttp 7507 139849744647872 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=medium&status= HTTP/1.1" 200 0
+INFO 2026-01-23 04:35:59,573 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=medium&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:36:01,155 basehttp 7507 139849744647872 "OPTIONS /api/v1/alerts/?page=1&page_size=20&severity=medium,low&status= HTTP/1.1" 200 0
+WARNING 2026-01-23 04:36:01,164 log 7507 139849744647872 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:36:01,165 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=medium,low&status= HTTP/1.1" 400 87
+WARNING 2026-01-23 04:36:02,660 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:36:02,661 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=medium,low&status= HTTP/1.1" 400 87
+WARNING 2026-01-23 04:36:03,308 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:36:03,309 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=medium,low&status= HTTP/1.1" 400 87
+INFO 2026-01-23 04:36:13,380 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+WARNING 2026-01-23 04:45:18,313 log 7507 139849744647872 Unauthorized: /api/v1/auth/logout/
+WARNING 2026-01-23 04:45:18,314 basehttp 7507 139849744647872 "POST /api/v1/auth/logout/ HTTP/1.1" 401 58
+INFO 2026-01-23 04:45:26,086 views 7507 139849744647872 User logged in: testuser
+INFO 2026-01-23 04:45:26,087 basehttp 7507 139849744647872 "POST /api/v1/auth/login/ HTTP/1.1" 200 489
+INFO 2026-01-23 04:45:26,438 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:45:35,397 basehttp 7507 139849744647872 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:45:40,892 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical&status= HTTP/1.1" 200 52
+WARNING 2026-01-23 04:45:41,924 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:41,925 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+WARNING 2026-01-23 04:45:43,452 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:43,452 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+WARNING 2026-01-23 04:45:45,585 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:45,586 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+WARNING 2026-01-23 04:45:46,255 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:46,255 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+WARNING 2026-01-23 04:45:46,626 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:46,626 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+WARNING 2026-01-23 04:45:46,825 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:46,825 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=critical,high&status= HTTP/1.1" 400 90
+INFO 2026-01-23 04:45:49,451 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+INFO 2026-01-23 04:45:50,582 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open HTTP/1.1" 200 52
+WARNING 2026-01-23 04:45:51,606 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:51,606 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 400 93
+WARNING 2026-01-23 04:45:52,501 log 7507 139849763911360 Bad Request: /api/v1/alerts/
+WARNING 2026-01-23 04:45:52,502 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status=open,investigating HTTP/1.1" 400 93
+INFO 2026-01-23 04:45:53,715 basehttp 7507 139849763911360 "GET /api/v1/alerts/?page=1&page_size=20&severity=&status= HTTP/1.1" 200 52
+WARNING 2026-01-23 04:45:54,456 log 7507 139849763911360 Unauthorized: /api/v1/auth/logout/
+WARNING 2026-01-23 04:45:54,456 basehttp 7507 139849763911360 "POST /api/v1/auth/logout/ HTTP/1.1" 401 58
+INFO 2026-01-23 05:14:35,495 autoreload 7507 139849919561856 /home/soler/octapus/akicti/akicti/settings.py changed, reloading.
+INFO 2026-01-23 05:14:36,797 autoreload 15563 140135453188224 Watching for file changes with StatReloader

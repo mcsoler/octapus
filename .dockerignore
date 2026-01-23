@@ -1,0 +1,36 @@
+# Frontend (will be built separately)
+frontend-akicti/node_modules/
+frontend-akicti/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Django
+*.log
+akicti/db.sqlite3
+akicti/staticfiles/
+akicti/media/
+akicti/logs/*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Misc
+.env.local
+.DS_Store
+*.bak
