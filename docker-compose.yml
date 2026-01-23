@@ -27,6 +27,7 @@ services:
 
   # Django Backend
   backend:
+    build: ./akicti
     image: akicti-backend:latest
     container_name: akicti_backend
     hostname: backend
@@ -63,6 +64,7 @@ services:
 
   # React Frontend
   frontend:
+    build: ./frontend-akicti
     image: akicti-frontend:latest
     container_name: akicti_frontend
     hostname: frontend
