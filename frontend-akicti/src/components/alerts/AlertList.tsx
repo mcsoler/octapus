@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../../contexts/AppProvider';
 import { useDebounce } from '../../hooks/useDebounce';
 import { Spinner } from '../ui/Spinner';
@@ -68,13 +69,13 @@ export function AlertList() {
 
   const hasActiveFilters = useMemo(() => {
     return (
-      alerts.filters.severity.length > 0 ||
-      alerts.filters.status.length > 0 ||
-      alerts.filters.search.length > 0
+      (alerts.filters?.severity?.length ?? 0) > 0 ||
+      (alerts.filters?.status?.length ?? 0) > 0 ||
+      (alerts.filters?.search?.length ?? 0) > 0
     );
   }, [alerts.filters]);
 
-  if (alerts.loading && alerts.items.length === 0) {
+  if (alerts.loading && (alerts.items?.length ?? 0) === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
         <Spinner size="lg" />
@@ -203,7 +204,7 @@ export function AlertList() {
 
       <Card>
         <CardContent className="p-0">
-          {alerts.items.length === 0 ? (
+          {(alerts.items?.length ?? 0) === 0 ? (
             <div className="text-center py-16">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gray-100 mb-4">
                 <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,19 +244,19 @@ export function AlertList() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
-                    {alerts.items.map((alert, index) => (
+                    {(alerts.items ?? []).map((alert, index) => (
                       <tr
                         key={alert.id}
                         className="hover:bg-primary-50/50 transition-colors duration-200"
                         style={{ animationDelay: `${index * 50}ms` }}
                       >
                         <td className="px-6 py-4">
-                          <a
-                            href={`/alerts/${alert.id}`}
+                          <Link
+                            to={`/alerts/${alert.id}`}
                             className="font-medium text-gray-800 hover:text-primary-600 transition-colors"
                           >
                             {alert.title}
-                          </a>
+                          </Link>
                         </td>
                         <td className="px-6 py-4">
                           <span

@@ -261,7 +261,7 @@ export function AlertDetail() {
           </div>
         </CardHeader>
         <CardContent className="p-0">
-          {evidences.loading && evidences.items.length === 0 ? (
+          {evidences.loading && (evidences.items?.length ?? 0) === 0 ? (
             <div className="flex flex-col items-center justify-center py-16 gap-4">
               <Spinner />
               <p className="text-gray-500 animate-pulse">Cargando evidencias...</p>
@@ -282,7 +282,7 @@ export function AlertDetail() {
               <p className="text-sm text-gray-500 mb-4">{evidences.error}</p>
               <Button onClick={() => fetchEvidences(alertId)}>Reintentar</Button>
             </div>
-          ) : evidences.items.length === 0 ? (
+          ) : (evidences.items?.length ?? 0) === 0 ? (
             <div className="text-center py-16">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gray-100 mb-4">
                 <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -300,7 +300,7 @@ export function AlertDetail() {
           ) : (
             <>
               <div className="divide-y divide-gray-100">
-                {evidences.items.map((evidence, index) => (
+                {(evidences.items ?? []).map((evidence, index) => (
                   <div
                     key={evidence.id}
                     className="px-6 py-5 hover:bg-primary-50/30 transition-colors duration-200"
