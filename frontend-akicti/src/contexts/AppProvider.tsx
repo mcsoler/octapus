@@ -35,12 +35,20 @@ export function AppProvider({ children }: { children: ReactNode }) {
       dispatch({
         type: 'ALERTS_FETCH_SUCCESS',
         payload: {
-          items: response.results,
-          count: response.count
+          items: response.results ?? [],
+          count: response.count ?? 0
         }
       });
     } catch (error) {
-      dispatch({ type: 'ALERTS_FETCH_ERROR', payload: 'Failed to fetch alerts' });
+      // Si el error es "Invalid page", resetear a página 1
+      const errorResponse = error as { response?: { data?: { detail?: string } } };
+      const errorDetail = errorResponse?.response?.data?.detail?.toLowerCase() ?? '';
+
+      if (errorDetail.includes('invalid page') && state.alerts.page > 1) {
+        dispatch({ type: 'ALERTS_SET_PAGE', payload: 1 });
+      } else {
+        dispatch({ type: 'ALERTS_FETCH_ERROR', payload: 'Error al cargar las alertas' });
+      }
     }
   }, [state.alerts.page, state.alerts.pageSize, state.alerts.filters]);
 
@@ -70,12 +78,20 @@ export function AppProvider({ children }: { children: ReactNode }) {
         dispatch({
           type: 'EVIDENCES_FETCH_SUCCESS',
           payload: {
-            items: response.results,
-            count: response.count
+            items: response.results ?? [],
+            count: response.count ?? 0
           }
         });
       } catch (error) {
-        dispatch({ type: 'EVIDENCES_FETCH_ERROR', payload: 'Failed to fetch evidences' });
+        // Si el error es "Invalid page", resetear a página 1
+        const errorResponse = error as { response?: { data?: { detail?: string } } };
+        const errorDetail = errorResponse?.response?.data?.detail?.toLowerCase() ?? '';
+
+        if (errorDetail.includes('invalid page') && state.evidences.page > 1) {
+          dispatch({ type: 'EVIDENCES_SET_PAGE', payload: 1 });
+        } else {
+          dispatch({ type: 'EVIDENCES_FETCH_ERROR', payload: 'Error al cargar las evidencias' });
+        }
       }
     },
     [state.evidences.page, state.evidences.pageSize]
