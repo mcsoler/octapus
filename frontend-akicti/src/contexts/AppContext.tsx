@@ -60,7 +60,7 @@ export const initialState: AppState = {
     items: [],
     count: 0,
     page: 1,
-    pageSize: 20,
+    pageSize: 15,
     loading: false,
     error: null,
     filters: {

@@ -45,11 +45,20 @@ export function AuthForm() {
     } catch (err) {
       console.error('Auth error:', err);
       if (err && typeof err === 'object' && 'response' in err) {
-        const errorResponse = err.response as { data?: { detail?: string } };
+        const errorResponse = err.response as { data?: { detail?: string }, status?: number };
         const errorData = errorResponse.data;
-        setError(errorData?.detail || 'Error de autenticacion. Por favor intente nuevamente.');
+        const status = errorResponse.status;
+
+        // Mensaje más claro para credenciales inválidas o usuario no encontrado
+        if (status === 401 || errorData?.detail?.toLowerCase().includes('no active account')) {
+          setError('Usuario o contraseña incorrectos. Si no tienes una cuenta, por favor registrate usando el enlace de abajo.');
+        } else if (status === 404) {
+          setError('Usuario no encontrado. Por favor verifica tu nombre de usuario o registrate para crear una cuenta nueva.');
+        } else {
+          setError(errorData?.detail || 'Error de autenticacion. Por favor intente nuevamente.');
+        }
       } else {
-        setError('Error de autenticacion. Por favor intente nuevamente.');
+        setError('Error de conexion. Por favor verifica tu conexion a internet e intenta nuevamente.');
       }
     } finally {
       setLoading(false);
@@ -209,18 +218,23 @@ export function AuthForm() {
               )}
 
               {error && (
-                <div className="p-4 rounded-xl bg-red-50 border border-red-100">
-                  <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0">
-                      <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                <div className="p-5 rounded-xl bg-red-50 border-2 border-red-200 shadow-lg shadow-red-100 animate-pulse">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            fillRule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                    <p className="text-sm text-red-700">{error}</p>
+                    <div className="flex-1">
+                      <h4 className="text-sm font-bold text-red-800 mb-1">Error de acceso</h4>
+                      <p className="text-sm text-red-700 leading-relaxed">{error}</p>
+                    </div>
                   </div>
                 </div>
               )}
