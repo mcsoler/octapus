@@ -9,7 +9,8 @@ import type {
   AuthRegister,
   AuthResponse,
   CreateAlert,
-  UpdateEvidence
+  UpdateEvidence,
+  UpdateAlert
 } from '../types';
 
 export const api = {
@@ -48,6 +49,10 @@ export const api = {
 
     create: (data: CreateAlert): Promise<Alert> => {
       return apiClient.post<Alert>('/api/v1/alerts/', data);
+    },
+
+    update: (id: number, data: UpdateAlert): Promise<AlertDetail> => {
+      return apiClient.patch<AlertDetail>(`/api/v1/alerts/${id}/`, data);
     },
 
     evidences: (

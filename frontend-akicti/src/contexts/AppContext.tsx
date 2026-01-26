@@ -32,6 +32,10 @@ export type AppState = {
     loading: boolean;
     error: string | null;
   };
+  alertUpdate: {
+    loading: boolean;
+    error: string | null;
+  };
 };
 
 export type AppAction =
@@ -53,6 +57,9 @@ export type AppAction =
   | { type: 'EVIDENCE_UPDATE_ERROR'; payload: string }
   | { type: 'EVIDENCE_UPDATE_OPTIMISTIC'; payload: { id: number; is_reviewed: boolean } }
   | { type: 'EVIDENCE_UPDATE_ROLLBACK'; payload: { id: number; is_reviewed: boolean } }
+  | { type: 'ALERT_UPDATE_START' }
+  | { type: 'ALERT_UPDATE_SUCCESS'; payload: AlertDetail }
+  | { type: 'ALERT_UPDATE_ERROR'; payload: string }
   | { type: 'RESET_STATE' };
 
 export const initialState: AppState = {
@@ -83,6 +90,10 @@ export const initialState: AppState = {
     error: null
   },
   evidenceUpdate: {
+    loading: false,
+    error: null
+  },
+  alertUpdate: {
     loading: false,
     error: null
   }
@@ -285,6 +296,37 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
               ? { ...evidence, is_reviewed: action.payload.is_reviewed }
               : evidence
           )
+        }
+      };
+
+    case 'ALERT_UPDATE_START':
+      return {
+        ...state,
+        alertUpdate: {
+          loading: true,
+          error: null
+        }
+      };
+
+    case 'ALERT_UPDATE_SUCCESS':
+      return {
+        ...state,
+        alertDetail: {
+          ...state.alertDetail,
+          item: action.payload
+        },
+        alertUpdate: {
+          loading: false,
+          error: null
+        }
+      };
+
+    case 'ALERT_UPDATE_ERROR':
+      return {
+        ...state,
+        alertUpdate: {
+          loading: false,
+          error: action.payload
         }
       };
 

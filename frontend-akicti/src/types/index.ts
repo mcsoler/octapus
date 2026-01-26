@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const severityEnum = z.enum(['critical', 'high', 'medium', 'low']);
-export const statusEnum = z.enum(['open', 'closed', 'investigating', 'pending']);
+export const statusEnum = z.enum(['open', 'in_progress', 'closed']);
 
 export type Severity = z.infer<typeof severityEnum>;
 export type Status = z.infer<typeof statusEnum>;
@@ -96,6 +96,12 @@ export const updateEvidenceSchema = z.object({
   is_reviewed: z.boolean().optional()
 });
 
+export const updateAlertSchema = z.object({
+  title: z.string().min(1).optional(),
+  severity: severityEnum.optional(),
+  status: statusEnum.optional()
+});
+
 export type Evidence = z.infer<typeof evidenceSchema>;
 export type Alert = z.infer<typeof alertSchema>;
 export type AlertDetail = z.infer<typeof alertDetailSchema>;
@@ -108,3 +114,4 @@ export type TokenRefresh = z.infer<typeof tokenRefreshSchema>;
 export type TokenVerify = z.infer<typeof tokenVerifySchema>;
 export type CreateAlert = z.infer<typeof createAlertSchema>;
 export type UpdateEvidence = z.infer<typeof updateEvidenceSchema>;
+export type UpdateAlert = z.infer<typeof updateAlertSchema>;

@@ -18,8 +18,7 @@ const severityOptions: { value: Severity; label: string; color: string }[] = [
 
 const statusOptions: { value: Status; label: string }[] = [
   { value: 'open', label: 'Abierto' },
-  { value: 'investigating', label: 'Investigando' },
-  { value: 'pending', label: 'Pendiente' },
+  { value: 'in_progress', label: 'En Progreso' },
   { value: 'closed', label: 'Cerrado' }
 ];
 
@@ -32,8 +31,7 @@ const severityStyles: Record<Severity, string> = {
 
 const statusStyles: Record<Status, string> = {
   open: 'bg-primary-100 text-primary-700 border border-primary-200',
-  investigating: 'bg-purple-100 text-purple-700 border border-purple-200',
-  pending: 'bg-amber-100 text-amber-700 border border-amber-200',
+  in_progress: 'bg-purple-100 text-purple-700 border border-purple-200',
   closed: 'bg-gray-100 text-gray-600 border border-gray-200'
 };
 
@@ -272,8 +270,7 @@ export function AlertList() {
                             className={`inline-flex px-3 py-1 text-xs font-medium rounded-lg ${statusStyles[alert.status]}`}
                           >
                             {alert.status === 'open' ? 'Abierto' :
-                             alert.status === 'investigating' ? 'Investigando' :
-                             alert.status === 'pending' ? 'Pendiente' : 'Cerrado'}
+                             alert.status === 'in_progress' ? 'En Progreso' : 'Cerrado'}
                           </span>
                         </td>
                         <td className="px-6 py-4 text-sm text-gray-500">

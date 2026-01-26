@@ -8,6 +8,7 @@ interface AppContextType {
   fetchAlertDetail: (id: number) => Promise<void>;
   fetchEvidences: (alertId: number) => Promise<void>;
   updateEvidence: (id: number, isReviewed: boolean) => Promise<void>;
+  updateAlert: (id: number, data: { severity?: string; status?: string }) => Promise<void>;
   setAlertPage: (page: number) => void;
   setEvidencePage: (page: number) => void;
   setAlertFilters: (filters: Partial<AppState['alerts']['filters']>) => void;
@@ -120,6 +121,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [state.evidences.items]
   );
 
+  const updateAlert = useCallback(
+    async (id: number, data: { severity?: string; status?: string }) => {
+      const { api } = await import('../api');
+      dispatch({ type: 'ALERT_UPDATE_START' });
+
+      try {
+        const response = await api.alerts.update(id, data);
+        dispatch({ type: 'ALERT_UPDATE_SUCCESS', payload: response });
+      } catch (_e) {
+        dispatch({ type: 'ALERT_UPDATE_ERROR', payload: 'Error al actualizar la alerta' });
+      }
+    },
+    []
+  );
+
   const setAlertPage = useCallback((page: number) => {
     dispatch({ type: 'ALERTS_SET_PAGE', payload: page });
   }, []);
@@ -144,6 +160,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       fetchAlertDetail,
       fetchEvidences,
       updateEvidence,
+      updateAlert,
       setAlertPage,
       setEvidencePage,
       setAlertFilters,
@@ -155,6 +172,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       fetchAlertDetail,
       fetchEvidences,
       updateEvidence,
+      updateAlert,
       setAlertPage,
       setEvidencePage,
       setAlertFilters,

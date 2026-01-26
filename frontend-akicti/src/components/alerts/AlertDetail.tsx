@@ -24,22 +24,20 @@ const severityLabels: Record<Severity, string> = {
 
 const statusStyles: Record<Status, string> = {
   open: 'bg-primary-100 text-primary-700',
-  investigating: 'bg-purple-100 text-purple-700',
-  pending: 'bg-amber-100 text-amber-700',
+  in_progress: 'bg-purple-100 text-purple-700',
   closed: 'bg-gray-100 text-gray-600'
 };
 
 const statusLabels: Record<Status, string> = {
   open: 'Abierto',
-  investigating: 'Investigando',
-  pending: 'Pendiente',
+  in_progress: 'En Progreso',
   closed: 'Cerrado'
 };
 
 export function AlertDetail() {
   const { id } = useParams<{ id: string }>();
-  const { state, fetchAlertDetail, fetchEvidences, updateEvidence, setEvidencePage } = useApp();
-  const { alertDetail, evidences } = state;
+  const { state, fetchAlertDetail, fetchEvidences, updateEvidence, updateAlert, setEvidencePage } = useApp();
+  const { alertDetail, evidences, alertUpdate } = state;
 
   const alertId = parseInt(id || '0', 10);
 
@@ -63,6 +61,24 @@ export function AlertDetail() {
       await updateEvidence(evidenceId, isReviewed);
     },
     [updateEvidence]
+  );
+
+  const handleSeverityChange = useCallback(
+    async (newSeverity: Severity) => {
+      if (alertId > 0) {
+        await updateAlert(alertId, { severity: newSeverity });
+      }
+    },
+    [alertId, updateAlert]
+  );
+
+  const handleStatusChange = useCallback(
+    async (newStatus: Status) => {
+      if (alertId > 0) {
+        await updateAlert(alertId, { status: newStatus });
+      }
+    },
+    [alertId, updateAlert]
   );
 
   if (alertDetail.loading && !alertDetail.item) {
@@ -147,9 +163,18 @@ export function AlertDetail() {
               <p className="text-gray-500 text-sm mt-1">ID: {alert.id}</p>
             </div>
             <div className="flex items-center gap-2">
-              <span className={`px-4 py-2 rounded-xl text-sm font-semibold ${severityStyles[alert.severity]}`}>
-                {severityLabels[alert.severity]}
-              </span>
+              <select
+                value={alert.severity}
+                onChange={(e) => handleSeverityChange(e.target.value as Severity)}
+                disabled={alertUpdate.loading}
+                className={`px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer border-0 appearance-none ${severityStyles[alert.severity]} ${alertUpdate.loading ? 'opacity-50' : ''}`}
+                style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px', paddingRight: '32px' }}
+              >
+                <option value="critical">{severityLabels.critical}</option>
+                <option value="high">{severityLabels.high}</option>
+                <option value="medium">{severityLabels.medium}</option>
+                <option value="low">{severityLabels.low}</option>
+              </select>
             </div>
           </div>
         </CardHeader>
@@ -169,9 +194,17 @@ export function AlertDetail() {
                 </div>
                 <p className="text-sm font-medium text-gray-500">Estado</p>
               </div>
-              <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-medium ${statusStyles[alert.status]}`}>
-                {statusLabels[alert.status]}
-              </span>
+              <select
+                value={alert.status}
+                onChange={(e) => handleStatusChange(e.target.value as Status)}
+                disabled={alertUpdate.loading}
+                className={`px-3 py-1 rounded-lg text-sm font-medium cursor-pointer border-0 appearance-none ${statusStyles[alert.status]} ${alertUpdate.loading ? 'opacity-50' : ''}`}
+                style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'/%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 4px center', backgroundSize: '14px', paddingRight: '24px' }}
+              >
+                <option value="open">{statusLabels.open}</option>
+                <option value="in_progress">{statusLabels.in_progress}</option>
+                <option value="closed">{statusLabels.closed}</option>
+              </select>
             </div>
 
             <div className="p-4 rounded-xl bg-gray-50 border border-gray-100">
