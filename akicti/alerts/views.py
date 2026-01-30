@@ -14,7 +14,7 @@ from .serializers import (
     EvidenceSerializer,
     EvidenceReviewSerializer,
 )
-from .permissions import IsOwnerOrAdmin
+from rest_framework.permissions import IsAuthenticated
 
 logger = logging.getLogger('auth')
 
@@ -29,7 +29,7 @@ class RegisterRateThrottle(AnonRateThrottle):
 
 class AlertViewSet(viewsets.ModelViewSet):
     queryset = Alert.objects.all()
-    permission_classes = [IsOwnerOrAdmin]
+    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ['severity', 'status']
     search_fields = ['title']
@@ -39,17 +39,14 @@ class AlertViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = super().get_queryset()
         user = self.request.user
-        
-        if user.is_superuser or user.is_staff:
-            return queryset
-        
+
         if not user.is_authenticated:
             raise exceptions.PermissionDenied(
                 detail='Authentication credentials were not provided.',
                 code='not_authenticated'
             )
-        
-        return queryset.filter(owner=user)
+
+        return queryset
     
     def get_serializer_class(self):
         if self.action == 'list':
@@ -87,7 +84,7 @@ class AlertViewSet(viewsets.ModelViewSet):
 
 class EvidenceViewSet(viewsets.ModelViewSet):
     queryset = Evidence.objects.all()
-    permission_classes = [IsOwnerOrAdmin]
+    permission_classes = [IsAuthenticated]
     ordering = ['-created_at']
     
     def get_serializer_class(self):
@@ -98,12 +95,14 @@ class EvidenceViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = super().get_queryset()
         user = self.request.user
-        
-        if user.is_superuser or user.is_staff:
-            return queryset
-        
-        alert_ids = Alert.objects.filter(owner=user).values_list('id', flat=True)
-        return queryset.filter(alert_id__in=alert_ids)
+
+        if not user.is_authenticated:
+            raise exceptions.PermissionDenied(
+                detail='Authentication credentials were not provided.',
+                code='not_authenticated'
+            )
+
+        return queryset
     
     def partial_update(self, request, *args, **kwargs):
         instance = self.get_object()
