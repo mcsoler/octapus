@@ -35,8 +35,8 @@ services:
     environment:
       - DEBUG=${DEBUG:-False}
       - SECRET_KEY=${SECRET_KEY:-django-insecure-change-this-in-production}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost,127.0.0.1,backend}
-      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173,http://localhost}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost,127.0.0.1,backend,82.197.73.189}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173,http://localhost,http://82.197.73.189}
       - DATABASE_URL=postgresql://${POSTGRES_USER:-akicti_user}:${POSTGRES_PASSWORD:-akicti_password}@db:5432/${POSTGRES_DB:-akicti_db}
       - POSTGRES_DB=${POSTGRES_DB:-akicti_db}
       - POSTGRES_USER=${POSTGRES_USER:-akicti_user}
