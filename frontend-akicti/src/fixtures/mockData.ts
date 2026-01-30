@@ -14,7 +14,7 @@ export const mockAlerts: Alert[] = [
     id: 2,
     title: 'Suspicious Login Activity',
     severity: 'high',
-    status: 'investigating',
+    status: 'in_progress',
     created_at: '2026-01-20T11:30:00Z',
     owner: 1,
     evidences_count: 12
@@ -50,7 +50,7 @@ export const mockAlerts: Alert[] = [
     id: 6,
     title: 'Port Scan Detected',
     severity: 'medium',
-    status: 'pending',
+    status: 'open',
     created_at: '2026-01-20T15:30:00Z',
     owner: 1,
     evidences_count: 10
@@ -59,7 +59,7 @@ export const mockAlerts: Alert[] = [
     id: 7,
     title: 'Brute Force Attack',
     severity: 'high',
-    status: 'investigating',
+    status: 'in_progress',
     created_at: '2026-01-20T16:45:00Z',
     owner: 1,
     evidences_count: 13
@@ -86,7 +86,7 @@ export const mockAlerts: Alert[] = [
     id: 10,
     title: 'Unauthorized Access Attempt',
     severity: 'high',
-    status: 'pending',
+    status: 'open',
     created_at: '2026-01-20T18:15:00Z',
     owner: 1,
     evidences_count: 11
@@ -95,7 +95,7 @@ export const mockAlerts: Alert[] = [
     id: 11,
     title: 'DDOS Attack Pattern',
     severity: 'critical',
-    status: 'investigating',
+    status: 'in_progress',
     created_at: '2026-01-20T19:00:00Z',
     owner: 1,
     evidences_count: 14
@@ -122,7 +122,7 @@ export const mockAlerts: Alert[] = [
     id: 14,
     title: 'Zero-Day Exploit',
     severity: 'critical',
-    status: 'investigating',
+    status: 'in_progress',
     created_at: '2026-01-20T21:30:00Z',
     owner: 1,
     evidences_count: 12
@@ -140,7 +140,7 @@ export const mockAlerts: Alert[] = [
     id: 16,
     title: 'Insider Threat Indicator',
     severity: 'medium',
-    status: 'pending',
+    status: 'open',
     created_at: '2026-01-20T22:45:00Z',
     owner: 1,
     evidences_count: 7
@@ -149,7 +149,7 @@ export const mockAlerts: Alert[] = [
     id: 17,
     title: 'Outbound Connection to Known C2',
     severity: 'high',
-    status: 'investigating',
+    status: 'in_progress',
     created_at: '2026-01-21T08:00:00Z',
     owner: 1,
     evidences_count: 11
@@ -167,7 +167,7 @@ export const mockAlerts: Alert[] = [
     id: 19,
     title: 'Certificate Revocation',
     severity: 'low',
-    status: 'pending',
+    status: 'open',
     created_at: '2026-01-21T10:15:00Z',
     owner: 1,
     evidences_count: 5

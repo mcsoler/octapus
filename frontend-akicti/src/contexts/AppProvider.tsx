@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useReducer, ReactNode, useCallback, useMemo } from 'react';
 import { appReducer, initialState, AppAction, AppState } from './AppContext';
+import type { UpdateAlert } from '../types';
 
 interface AppContextType {
   state: AppState;
@@ -8,7 +9,7 @@ interface AppContextType {
   fetchAlertDetail: (id: number) => Promise<void>;
   fetchEvidences: (alertId: number) => Promise<void>;
   updateEvidence: (id: number, isReviewed: boolean) => Promise<void>;
-  updateAlert: (id: number, data: { severity?: string; status?: string }) => Promise<void>;
+  updateAlert: (id: number, data: UpdateAlert) => Promise<void>;
   setAlertPage: (page: number) => void;
   setEvidencePage: (page: number) => void;
   setAlertFilters: (filters: Partial<AppState['alerts']['filters']>) => void;
@@ -122,7 +123,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   );
 
   const updateAlert = useCallback(
-    async (id: number, data: { severity?: string; status?: string }) => {
+    async (id: number, data: UpdateAlert) => {
       const { api } = await import('../api');
       dispatch({ type: 'ALERT_UPDATE_START' });
 
