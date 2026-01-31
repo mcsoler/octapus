@@ -52,16 +52,14 @@ export function AlertList() {
   };
 
   const handleSeverityToggle = (severity: Severity) => {
-    const newSeverities = alerts.filters.severity.includes(severity)
-      ? alerts.filters.severity.filter((s) => s !== severity)
-      : [...alerts.filters.severity, severity];
+    // Selección única: si ya está seleccionado lo quita, si no lo selecciona como único
+    const newSeverities = alerts.filters.severity.includes(severity) ? [] : [severity];
     setAlertFilters({ severity: newSeverities });
   };
 
   const handleStatusToggle = (status: Status) => {
-    const newStatuses = alerts.filters.status.includes(status)
-      ? alerts.filters.status.filter((s) => s !== status)
-      : [...alerts.filters.status, status];
+    // Selección única: si ya está seleccionado lo quita, si no lo selecciona como único
+    const newStatuses = alerts.filters.status.includes(status) ? [] : [status];
     setAlertFilters({ status: newStatuses });
   };
 
