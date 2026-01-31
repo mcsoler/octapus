@@ -1,19 +1,41 @@
-# Akicti - Evidence Inbox Platform
+# Akicti – Evidence Inbox Platform
 
-Akicti es una plataforma de monitoreo de seguridad que permite gestionar alertas y evidencias de amenazas detectadas en diferentes fuentes. El sistema proporciona una interfaz centralizada para que los equipos de seguridad puedan revisar, clasificar y dar seguimiento a incidentes de seguridad.
+Akicti es una plataforma de **monitoreo y gestión de evidencias de seguridad** que centraliza alertas provenientes de múltiples fuentes para facilitar su análisis, clasificación y seguimiento por parte de equipos de ciberseguridad.
 
-## Descripción del Sistema
+---
 
-El sistema de alertas permite:
+## 🚀 Features
 
-- **Gestión de Alertas**: Crear, listar y filtrar alertas de seguridad clasificadas por severidad (critical, high, medium, low) y estado (open, in_progress, closed)
-- **Evidencias Asociadas**: Cada alerta puede tener múltiples evidencias provenientes de diferentes fuentes (Twitter, LinkedIn, Instagram, Web, Agentes)
-- **Revisión de Evidencias**: Los analistas pueden marcar evidencias como revisadas, con tracking automático de quién y cuándo se revisó
-- **Autenticación Segura**: Sistema de autenticación JWT con rotación de tokens y blacklisting
+- Gestión centralizada de alertas de seguridad
+- Clasificación por severidad y estado
+- Asociación de múltiples evidencias por alerta
+- Revisión y auditoría de evidencias
+- Autenticación segura basada en JWT
+- Arquitectura desacoplada y escalable
 
-## Arquitectura
+---
 
-El proyecto sigue una arquitectura REST desacoplada:
+## 🧩 System Overview
+
+El sistema permite:
+
+- **Gestión de Alertas**  
+  Crear, listar y filtrar alertas clasificadas por severidad (`critical`, `high`, `medium`, `low`) y estado (`open`, `in_progress`, `closed`).
+
+- **Evidencias Asociadas**  
+  Cada alerta puede contener múltiples evidencias provenientes de distintas fuentes (Twitter, LinkedIn, Instagram, Web, Agentes).
+
+- **Revisión de Evidencias**  
+  Los analistas pueden marcar evidencias como revisadas, con trazabilidad automática de quién y cuándo realizó la revisión.
+
+- **Autenticación Segura**  
+  Autenticación JWT con rotación de tokens y blacklisting.
+
+---
+
+## 🏗️ Architecture
+
+Akicti sigue una arquitectura **REST desacoplada**, separando claramente frontend, backend y base de datos:
 
 ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
 │ Frontend │ JSON │ Backend │ │ Database │
@@ -22,9 +44,11 @@ El proyecto sigue una arquitectura REST desacoplada:
 └─────────────────┘ └─────────────────┘ └─────────────────┘
 
 
-## Stack Tecnológico
+---
 
-### Backend (Django)
+## 🛠️ Tech Stack
+
+### Backend
 
 | Tecnología | Propósito |
 |------------|-----------|
@@ -35,29 +59,21 @@ El proyecto sigue una arquitectura REST desacoplada:
 | django-cors-headers | Manejo de CORS |
 | PostgreSQL | Base de datos |
 
-**Buenas Prácticas Implementadas:**
+#### Security & Best Practices
 
-- **Autenticación JWT Avanzada**
-  - Rotación de refresh tokens (`ROTATE_REFRESH_TOKENS=True`)
-  - Blacklisting de tokens comprometidos
-  - Tokens de acceso cortos (30 minutos)
-  - Refresh tokens con expiración (7 días)
+- Rotación de refresh tokens
+- Blacklisting de tokens comprometidos
+- Tokens de acceso de corta duración (30 min)
+- Refresh tokens con expiración (7 días)
+- Rate limiting diferenciado
+- Headers de seguridad (HSTS, CSP, X-Frame-Options)
+- Validación de contraseñas
+- Throttling por usuario
+- Auditoría de logs
 
-- **Seguridad**
-  - Rate limiting diferenciado (más estricto para login/register)
-  - CORS configurado para dominios específicos
-  - Headers de seguridad (HSTS, CSP, X-Frame-Options)
-  - Validación de password strength
-  - Throttling por usuario
+---
 
-- **Arquitectura**
-  - Separación en apps (alerts, users)
-  - Permisos custom (`IsOwnerOrAdmin`, `IsAdmin`)
-  - Serializers con validación
-  - ViewSets con filtros y paginación
-  - Auditoría de logs
-
-### Frontend (React)
+### Frontend
 
 | Tecnología | Propósito |
 |------------|-----------|
@@ -69,34 +85,24 @@ El proyecto sigue una arquitectura REST desacoplada:
 | Axios | HTTP client |
 | Zod | Validación de schemas |
 
-**Buenas Prácticas Implementadas:**
+#### Frontend Best Practices
 
-- **Gestión de Estado**
-  - Single Context con `useReducer` (sin Redux/MobX)
-  - Estado normalizado y optimizado
-  - Memoización selectiva con `useMemo` / `useCallback`
-
-- **API Layer**
-  - JWT Rotation automático
-  - Retry logic con exponential backoff
-  - Request caching con TTL configurable
-  - Request deduplication
+- Gestión de estado con Context API + `useReducer`
+- Estado normalizado y optimizado
+- Memoización selectiva (`useMemo`, `useCallback`)
+- Capa de API con:
+  - Rotación automática de JWT
+  - Retry con exponential backoff
+  - Cache con TTL
+  - Deduplicación de requests
   - Manejo centralizado de errores
+- Optimistic UI updates con rollback automático
+- Testing con Vitest y React Testing Library
+- Mocking de APIs con MSW
 
-- **Optimistic Updates**
-  - Actualización inmediata de UI
-  - Rollback automático en caso de error
+---
 
-- **Validación**
-  - Zod schemas para validación estricta
-  - TypeScript strict mode
-
-- **Calidad de Código**
-  - ESLint + Prettier
-  - Testing con Vitest + React Testing Library
-  - MSW para mocking de APIs
-
-## Estructura del Proyecto
+## 📁 Project Structure
 
 octapus/
 ├── akicti/ # Backend Django
@@ -133,50 +139,83 @@ octapus/
 └── README.md
 
 
-## Endpoints API
+---
 
-### Autenticación (`/api/v1/auth/`)
+## 🔌 API Endpoints
 
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
+### Authentication (`/api/v1/auth/`)
+
+| Method | Endpoint | Description |
+|-------|----------|-------------|
 | POST | `/register/` | Registrar usuario |
 | POST | `/login/` | Obtener tokens JWT |
 | POST | `/logout/` | Invalidar refresh token |
 | POST | `/token/refresh/` | Rotar tokens |
 | POST | `/token/verify/` | Verificar token |
 
-### Alertas (`/api/v1/alerts/`)
+---
 
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | `/` | Listar alertas (con filtros, búsqueda, paginación) |
+### Alerts (`/api/v1/alerts/`)
+
+| Method | Endpoint | Description |
+|-------|----------|-------------|
+| GET | `/` | Listar alertas |
 | GET | `/<id>/` | Detalle de alerta |
 | POST | `/` | Crear alerta |
-| GET | `/<id>/evidences/` | Listar evidencias de alerta |
+| GET | `/<id>/evidences/` | Evidencias de la alerta |
 
-**Parámetros de filtrado:**
-- `?severity=critical` - Filtrar por severidad
-- `?status=open` - Filtrar por estado
-- `?search=phishing` - Buscar por título
-- `?page=1&page_size=15` - Paginación
+**Query parameters:**
+- `severity`
+- `status`
+- `search`
+- `page`, `page_size`
 
-### Evidencias (`/api/v1/evidences/`)
+---
 
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
+### Evidences (`/api/v1/evidences/`)
+
+| Method | Endpoint | Description |
+|-------|----------|-------------|
 | PATCH | `/<id>/` | Marcar evidencia como revisada |
 
-## Despliegue con Docker
+---
 
-### Servicios
+## 🐳 Docker Deployment
 
-| Servicio | Puerto Externo | Puerto Interno | Imagen |
-|----------|----------------|----------------|--------|
-| db (PostgreSQL) | 3310 | 5432 | postgres:16-alpine |
-| backend (Django) | 8000 | 8000 | python:3.12-slim |
-| frontend (React) | 3000 | 80 | nginx:alpine |
+### Services
 
-## Licencia
+| Service | External Port | Internal Port | Image |
+|--------|---------------|---------------|-------|
+| PostgreSQL | 3310 | 5432 | postgres:16-alpine |
+| Backend | 8000 | 8000 | python:3.12-slim |
+| Frontend | 3000 | 80 | nginx:alpine |
 
-Proyecto privado - Todos los derechos reservados.
+### Run with Docker
+
+## Build images and run containers 
+docker-compose up --build -d
+
+## Check if any containers are running.
+docker ps
+
+## Turn off containers
+docker-compose down
+
+## Turn off containers and delete volumes (WARNING: Delete data)
+docker-compose down -v 
+
+### 🧪 Testing
+
+## Backend
+python manage.py test alerts users
+
+## Frotend
+npm run test
+npm run test:coverage
+
+### License
+Private project.  
+All rights reserved.
+
+
 
