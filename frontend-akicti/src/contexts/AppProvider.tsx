@@ -29,8 +29,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       const response = await api.alerts.list({
         page: state.alerts.page,
         page_size: state.alerts.pageSize,
-        severity: state.alerts.filters.severity.join(','),
-        status: state.alerts.filters.status.join(','),
+        severity: state.alerts.filters.severity.length > 0 ? state.alerts.filters.severity.join(',') : undefined,
+        status: state.alerts.filters.status.length > 0 ? state.alerts.filters.status.join(',') : undefined,
         search: state.alerts.filters.search || undefined
       });
 
